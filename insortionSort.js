@@ -1,3 +1,6 @@
+/*
+ * Reference to book: Chapter 2.1 Insertion Sort
+*/
 var a = [5, 2, 4, 6, 1, 3];
 
 const insertionSort = (arrayToSort) => {
