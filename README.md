@@ -4,17 +4,17 @@ This repo is my attempt to implement algorithms in [Introduction to Algorithms b
 
 ## <b>Chapter 2.2 Analyzing algorithms</b>
 
-## What is analyzing an algorithm?
+### What is analyzing an algorithm?
 Analyzing an algorithm is to predict the resources that the algorithm requires.
 - most often, it's computational time we want to measure
 
 
-## Analysis of insertion sort
+### Analysis of insertion sort
 It's traditional to describle the running time of a program as a function of the size of its input.
 
 The running time of an algorithm on a particular input is the number of primitive operations or "steps" executed.
 
-## How to derive big O notation for insertsion sort?
+### How to derive big O notation for insertsion sort?
 1. For now, we assume that to execute each line of our pseudocode, a constant amount of time is required.
 
 1. Assume that each execution of the i th line takes time c<sub>i</sub>, where c<sub>i</sub> is a constant.
