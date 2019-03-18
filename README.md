@@ -15,7 +15,7 @@ It's traditional to describle the running time of a program as a function of the
 The running time of an algorithm on a particular input is the number of primitive operations or "steps" executed.
 
 ### How to derive big O notation for insertsion sort?
-1. For now, we assume that to execute each line of our pseudocode, a constant amount of time is required.
+1. For now, we assume that to execute each line of our pseudocode (refers to the pseudocode in textbook, JS implementation [here](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/insertionSort.js) is a better reference), a constant amount of time is required.
 
 1. Assume that each execution of the i th line takes time c<sub>i</sub>, where c<sub>i</sub> is a constant.
 
