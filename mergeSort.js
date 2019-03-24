@@ -11,6 +11,9 @@ const mergeSort = (arrayToSort, firstIndex, lastIndex) =>  {
     mergeSort(arrayToSort, firstIndex, midIndex);
 
     console.log('mergeSort() right, midIndex + 1, lastIndex: ', midIndex + 1, lastIndex);
+    ////////
+    //// problem: midIndex + 1 is one index less than what it's supposed to be
+    ////////
     mergeSort(arrayToSort, (midIndex + 1), lastIndex);
 
     console.log('------------------')
