@@ -30,3 +30,10 @@ The running time of an algorithm on a particular input is the number of primitiv
 1. Calculate the running time for worst-case scenario: a quadratic function of n.
 
 1. It's rate of growth or order of growth, of the running time that really interests us. We drop the coefficient of leading term, and drop the non-leading terms of the formula. For large input n, these are relatively insignificant. Thus, Θ(n<sup>2</sup>).
+
+## Chapter 2.3 Designing algorithms
+### What is divide-and-conquer?
+Break the problem into several smaller subproblems that are similar to original problems, solve the problem recursively, then combine these solutions into a solution to the original problem.
+
+### Example of divide-and-conquer: merge sort
+My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the psudocde in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithms.
