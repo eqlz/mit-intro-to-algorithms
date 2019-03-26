@@ -36,4 +36,4 @@ The running time of an algorithm on a particular input is the number of primitiv
 Break the problem into several smaller subproblems that are similar to original problems, solve the problem recursively, then combine these solutions into a solution to the original problem.
 
 ### Example of divide-and-conquer: merge sort
-My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the psudocde in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithms.
+My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the pseudocode in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithm works.
