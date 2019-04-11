@@ -1,17 +1,36 @@
 var a = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7];
 
+const heapSort = (arrayToHeapSort) => {
+    buildMaxHeapify(arrayToHeapSort);
+    
+    let heapSize = arrayToHeapSort.length;
+    for(let i = arrayToHeapSort.length - 1; i > 0; i--) {
+        console.log('array before swap: ', arrayToHeapSort);
+        
+        let rootValue = arrayToHeapSort[0];
+        let lastIndexValue = arrayToHeapSort[i];
+        arrayToHeapSort[0] = lastIndexValue;
+        arrayToHeapSort[i] = rootValue;
+        console.log('array after swap: ', arrayToHeapSort);
+
+        heapSize -= 1;
+
+        maxHeapify(arrayToHeapSort, 0, heapSize);
+    }
+}
+
 const buildMaxHeapify = (arrayToMaxHeapify) => {
-    console.log('arrayToMaxHeapify, index: ', arrayToMaxHeapify)
-    let heapSize = arrayToMaxHeapify.length;
     for(let i = Math.floor(arrayToMaxHeapify.length / 2); i > -1; i--) {
         maxHeapify(arrayToMaxHeapify, i);
     }
 }
 
-const maxHeapify = (arrayToMaxHeapify, index) => {
+const maxHeapify = (arrayToMaxHeapify, index, heapSize) => {
     // console.log('arrayToMaxHeapify, index: ', arrayToMaxHeapify, index)
-    let heapSize = arrayToMaxHeapify.length;
-
+    if(typeof heapSize === 'undefined') {
+        heapSize = arrayToMaxHeapify.length;
+    }
+    console.log(heapSize);
     let indexOfLeftChildNode = getIndexOfLeftChild(index);
     let indexOfRightChildNode = getIndexOfRightChild(index);
 
@@ -33,8 +52,10 @@ const maxHeapify = (arrayToMaxHeapify, index) => {
         arrayToMaxHeapify[index] = largestValue;
         arrayToMaxHeapify[indexOfLargestValue] = indexValue;
 
-        maxHeapify(arrayToMaxHeapify, indexOfLargestValue);
+        maxHeapify(arrayToMaxHeapify, indexOfLargestValue, heapSize);
     }
+
+    return arrayToMaxHeapify;
 }
 
 const getIndexOfLeftChild = (index) => {
@@ -45,5 +66,6 @@ const getIndexOfRightChild = (index) => {
     return (index * 2) + 2
 }
 
-buildMaxHeapify(a);
+heapSort(a);
 console.log('result: ', a);
+// console.log(maxHeapify([ 2, 8, 3, 4, 7, 1, 9, 10, 14, 16 ], 0, 6));
