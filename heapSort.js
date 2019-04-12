@@ -6,7 +6,7 @@ const heapSort = (arrayToHeapSort) => {
     let heapSize = arrayToHeapSort.length;
     for(let i = arrayToHeapSort.length - 1; i > 0; i--) {
         console.log('array before swap: ', arrayToHeapSort);
-        
+
         let rootValue = arrayToHeapSort[0];
         let lastIndexValue = arrayToHeapSort[i];
         arrayToHeapSort[0] = lastIndexValue;
@@ -26,7 +26,6 @@ const buildMaxHeapify = (arrayToMaxHeapify) => {
 }
 
 const maxHeapify = (arrayToMaxHeapify, index, heapSize) => {
-    // console.log('arrayToMaxHeapify, index: ', arrayToMaxHeapify, index)
     if(typeof heapSize === 'undefined') {
         heapSize = arrayToMaxHeapify.length;
     }
