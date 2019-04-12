@@ -15,3 +15,17 @@ class Queue {
         }
     }
 }
+
+class Queue2 {
+    constructor() {
+        this.dataStore = [];
+    }
+
+    enqueue(element) {
+        this.dataStore.unshift(element);
+    }
+
+    dequeue() {
+        this.dataStore.pop();
+    }
+}
