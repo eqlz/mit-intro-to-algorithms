@@ -67,19 +67,26 @@ class DoublyLinkedList{
 
     let nodeToBeRemoved = this.get(index);
 
+    if(nodeToBeRemoved.prev === null && nodeToBeRemoved.next === null) {
+      this[head] = null;
+      this[tail] = null;
+      return nodeToBeRemoved;
+    }
+
     if(nodeToBeRemoved.prev === null) { // remove head
       nodeToBeRemoved.next.prev = null;
       this[head] = nodeToBeRemoved.next;
-      return;
+      return nodeToBeRemoved;
     }
     else if(nodeToBeRemoved.next === null) {// remove tail
       nodeToBeRemoved.prev.next = null;
       this[tail] = nodeToBeRemoved.prev;
-      return;
+      return nodeToBeRemoved;
     }
     else {
       nodeToBeRemoved.prev.next = nodeToBeRemoved.next;
       nodeToBeRemoved.next.prev = nodeToBeRemoved.prev;
+      return nodeToBeRemoved;
     }
   }
 }
