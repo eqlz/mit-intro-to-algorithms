@@ -67,21 +67,19 @@ class DoublyLinkedList{
 
     let nodeToBeRemoved = this.get(index);
 
-    // nodeToBeRemoved.prev.next = nodeToBeRemoved.next;
-    // nodeToBeRemoved.next.prev = nodeToBeRemoved.prev;
-
-    let nodeBefore = nodeToBeRemoved.prev;
-    let nodeAfter = nodeToBeRemoved.next;
-
-    nodeBefore.next = nodeAfter;
-    nodeAfter.prev = nodeBefore;
-
-    if(nodeToBeRemoved.prev === null) {
-      this[head] = nodeAfter;
+    if(nodeToBeRemoved.prev === null) { // remove head
+      nodeToBeRemoved.next.prev = null;
+      this[head] = nodeToBeRemoved.next;
+      return;
     }
-
-    if(nodeToBeRemoved.next === null) {
-      this[tail] = nodeBefore;
+    else if(nodeToBeRemoved.next === null) {// remove tail
+      nodeToBeRemoved.prev.next = null;
+      this[tail] = nodeToBeRemoved.prev;
+      return;
+    }
+    else {
+      nodeToBeRemoved.prev.next = nodeToBeRemoved.next;
+      nodeToBeRemoved.next.prev = nodeToBeRemoved.prev;
     }
   }
 }
@@ -91,8 +89,17 @@ list.add('a');
 list.add('b');
 list.add('c');
 list.add('d');
+// console.log(list);
+// console.log('head: ', list[head]);
+// console.log('tail: ', list[tail]);
 
-console.log(list.get(0));
+// console.log(list.get(0));
 
-list.remove(0)
-console.log(list);
+// remove head
+// list.remove(0)
+
+// remove tail
+// list.remove(3)
+
+// remove node between head and tail
+// list.remove(2)
