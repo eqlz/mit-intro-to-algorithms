@@ -20,5 +20,4 @@ let next = [1, 2, 3, -1];
   so in next array, first item will 1.
   
   prev and next are arrays of indice of items in key array.
-
 */
