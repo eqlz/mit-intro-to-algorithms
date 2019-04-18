@@ -12,11 +12,11 @@ let user = { name: "Emily" };
 let id = Symbol("id");
 
 user[id] = "ID value for Emily";
-alert( user[id] ); // we can access the data using the symbol as the key
+console.log( user[id] ); // we can access the data using the symbol as the key
 ```
 - Symbols are skipped by for…in, e.g.
 ```
-let id = Symbol('id);
+let id = Symbol('id');
 let user = {
   name: 'John',
   age: 30,
@@ -26,6 +26,9 @@ let user = {
 for (let key in user) {
   console.log(key);
 }
+
+// name
+// age
 ```
 
 
