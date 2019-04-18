@@ -1,27 +1,3 @@
-class DoublyLinkedListNode {
-    constructor(data) {
-        this.data = data;
-        this.next = null;
-        this.prev = null;
-    }
-}
-
-// const head = new DoublyLinkedListNode(9);
-
-// const secondNode = new DoublyLinkedListNode(16);
-// head.next = secondNode;
-// secondNode.prev = head;
-
-// const thirdNode = new DoublyLinkedListNode(4);
-// secondNode.next = thirdNode;
-// thirdNode.prev = secondNode;
-
-// const fourthNode = new DoublyLinkedListNode(1);
-// thirdNode.next = fourthNode;
-// fourthNode.prev = thirdNode
-
-// const tail = fourthNode;
-
 const head = Symbol("head");
 const tail = Symbol("tail");
 
@@ -90,6 +66,16 @@ class DoublyLinkedList{
     }
   }
 }
+
+class DoublyLinkedListNode {
+  constructor(data) {
+      this.data = data;
+      this.next = null;
+      this.prev = null;
+  }
+}
+
+module.exports = DoublyLinkedList;
 
 const list = new DoublyLinkedList();
 list.add('a');
