@@ -2,7 +2,7 @@
  * This is a multi array representation of objects
 */
 
-var DoublyLinkedList = require('./linkedList');
+var DoublyLinkedList = require('./doublyLinkedList');
 
 const list = new DoublyLinkedList();
 list.add(9);

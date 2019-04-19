@@ -12,7 +12,7 @@ let user = { name: "Emily" };
 let id = Symbol("id");
 
 user[id] = "ID value for Emily";
-console.log( user[id] ); // we can access the data using the symbol as the key
+console.log( user[id] );
 ```
 - Symbols are skipped by for…in, e.g.
 ```
