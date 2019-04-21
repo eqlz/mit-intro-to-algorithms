@@ -38,12 +38,12 @@ for (let key in user) {
   - Then the object must implement a @@iterator method. That is, the object must have a property whose key is @@iterator, which is available by constant ```Symbol.Iterator```.
   - @@iterator method is called with no arguments, returns an object that is conforming to iterator protocol.
 - Then what is an iterator?
-  - an iterator is an object when it implements method ```next()``` with following:
+  - an iterator is an object when it implements method ```next()```
   - ```next()``` method returns an object that has at least the following [two properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol):
     -  ```done``` (boolean)
     -  ```value```
 
-- Notice that, a generator object that is returned by a generator function is conforms to both iterable protocol and iterator protocol. It comes handy when making an object iterable. [Example](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/singlyLinkedList.js).
+- Notice that, a generator object that is returned by a generator function conforms to both iterable protocol and iterator protocol. It comes handy when making an object iterable. [Example](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/singlyLinkedList.js).
 
 
 # Generator function
