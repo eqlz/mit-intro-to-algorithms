@@ -46,3 +46,30 @@ for (let key in user) {
 
 - an illustration of how generator function works:
 ![Image of functions vs generators](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/js-learned-along-the-way/normal-functions-vs-generators.png)
+  - start a generator function by calling ```next()``` or using in loops/functions
+
+## Create generator function
+- syntax ```function *``` 
+
+- keyword ```yield```: an operator with which a generator can pause itself. 
+- Every time a generator encounters a ```yield```, it "returns" the value specified after it.
+- we don't say "returned" in the context of generator, we say "yielded".
+
+- invoke generator function in the following example ```const generatorObject = generatorFunction();```.
+- a generator function always returns a generator object.
+  - a generator object is an iterator
+  - can call ```next()``` method on generator object
+```
+function *generatorFunction() {
+  console.log('This will be execusted first.');
+  yield 'Hello, ';
+  console.log('This will be execusted after Hello');
+  yield 'World!'
+}
+
+const generatorObject = generatorFunction(); // invoke generator function
+
+console.log(generatorObject.next().value);
+console.log(generatorObject.next().value);
+console.log(generatorObject.next().value);
+```
