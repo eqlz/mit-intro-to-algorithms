@@ -1,4 +1,4 @@
-*The purpose of writing notes, is to makes it unnecessary. In the process of orginazing notes, I have understood the material.*
+*The purpose of writing notes, is to makes notes unnecessary. In the process of orginazing notes, I have understood the material.*
 
 # Symbol
 - symbol value is unique
@@ -33,6 +33,18 @@ for (let key in user) {
 // age
 ```
 # Iterable
+- There are built-in iterables, liket array, map, set, but not object.
+- What if I want to make object iterable?
+  - Then the object must implement a @@iterator method. That is, the object must have a property whose key is @@iterator, which is available by constant ```Symbol.Iterator```.
+  - @@iterator method is called with no arguments, returns an object that is conforming to iterator protocol.
+- Then what is an iterator?
+  - an iterator is an object when it implements method ```next()``` with following:
+  - ```next()``` method returns an object that has at least the following [two properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol):
+    -  ```done``` (boolean)
+    -  ```value```
+
+- Notice that, a generator object that is returned by a generator function is conforms to both iterable protocol and iterator protocol. It comes handy when making an object iterable. [Example](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/singlyLinkedList.js).
+
 
 # Generator function
 - a function that can stop midway and then continue from where it stopped
