@@ -56,9 +56,12 @@ for (let key in user) {
 - we don't say "returned" in the context of generator, we say "yielded".
 
 - invoke generator function in the following example ```const generatorObject = generatorFunction();```.
-- a generator function always returns a generator object.
+- a generator function always returns a [generator object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator).
   - a generator object is an iterator
   - can call ```next()``` method on generator object
+
+- when ```done``` is set to ```true```, it signals the end of a generator. It can't generate more values or resume again, because there is no more statements to execute.
+- to run the generator again, we have make a new generator object.
 ```
 function *generatorFunction() {
   console.log('This will be execusted first.');
