@@ -45,3 +45,4 @@ for (let key in user) {
   - ```done``` property is either ```true``` or ```false```. When it's ```true```, the generator functions stops and won't generate any more values.  
 
 - an illustration of how generator function works:
+![Image of functions vs generators](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/js-learned-along-the-way/normal-functions-vs-generators.png)
