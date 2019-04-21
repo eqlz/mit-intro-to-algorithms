@@ -1,3 +1,5 @@
+*The purpose of writing notes, is to makes it unnecessary. In the process of orginazing notes, I have understood the material.*
+
 # Symbol
 - symbol value is unique
 - create symbol via ```Symbol()```
@@ -30,6 +32,7 @@ for (let key in user) {
 // name
 // age
 ```
+# Iterable
 
 # Generator function
 - a function that can stop midway and then continue from where it stopped
