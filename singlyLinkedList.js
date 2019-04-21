@@ -9,7 +9,7 @@ class SinglyLinkedList {
   }
 
   add(data) {
-    let newNode = LinkedListNode(data);
+    let newNode = new LinkedListNode(data);
 
     if(this[head] === null) {
       this[head] = newNode;
@@ -17,7 +17,7 @@ class SinglyLinkedList {
     else {
       let current = this[head];
       while(current.next !== null) {
-        curent = current.next;
+        current = current.next;
       }
       current.next = newNode;
     }
@@ -84,6 +84,10 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
+
+  [Symbol.iterator]() {
+    return this.values()
+  }
 }
 
 class LinkedListNode {
@@ -91,4 +95,15 @@ class LinkedListNode {
     this.data = data;
     this.next = null;
   }
+}
+
+
+let list = new SinglyLinkedList();
+list.add('a');
+list.add('b');
+list.add('c');
+list.add('d');
+
+for(let node of list) {
+  console.log('make list iterable: ', node.data);
 }
