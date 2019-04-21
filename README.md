@@ -1,5 +1,7 @@
 This repo is my attempt to implement algorithms in [Introduction to Algorithms by CLRS](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) while I'm following MIT's Introduction to Algorithms course via their [open course ware](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/index.htm).
 
+*The purpose of writing notes, is to makes notes unnecessary. In the process of orginazing notes, I have understood the material.*
+
 # Notes
 
 ## <b>Chapter 2.2 Analyzing algorithms</b>
