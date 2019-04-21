@@ -1,6 +1,7 @@
 *The purpose of writing notes, is to makes notes unnecessary. In the process of orginazing notes, I have understood the material.*
 
 # Symbol
+*[source]* (https://javascript.info/symbol)
 - symbol value is unique
 - create symbol via ```Symbol()```
 - we can give symbol a descprition ```Symbol('description')```, e.g. ```let id = Symbol("id");```
@@ -47,6 +48,7 @@ for (let key in user) {
 
 
 # Generator function
+*[source]* (https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5)
 - a function that can stop midway and then continue from where it stopped
 - a function that produces a sequence of results instead of a single value, i.e. you generate a series of values
 - a generator function will return an object upon the call ```next()```. Every invocation of ```next()``` will return an object in the form of:
