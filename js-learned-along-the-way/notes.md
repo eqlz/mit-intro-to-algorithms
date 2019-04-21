@@ -31,4 +31,17 @@ for (let key in user) {
 // age
 ```
 
+# Generator function
+- a function that can stop midway and then continue from where it stopped
+- a function that produces a sequence of results instead of a single value, i.e. you generate a series of values
+- a generator function will return an object upon the call ```next()```. Every invocation of ```next()``` will return an object in the form of:
+  - ```
+    {
+      value: any,
+      done: true or false
+    }
+    ``` 
+  - ```value``` property will contain value
+  - ```done``` property is either ```true``` or ```false```. When it's ```true```, the generator functions stops and won't generate any more values.  
 
+- an illustration of how generator function works:
