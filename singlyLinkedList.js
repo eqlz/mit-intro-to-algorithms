@@ -76,6 +76,10 @@ class SinglyLinkedList {
 
     throw new RangeError(`Index ${index} does not exist in the list.`);
   }
+  
+  [Symbol.iterator]() {
+    return this.values()
+  }
 
   *values() {
     let current = this[head];
@@ -83,11 +87,7 @@ class SinglyLinkedList {
       yield current;
       current = current.next;
     }
-  }
-
-  [Symbol.iterator]() {
-    return this.values()
-  }
+  } 
 }
 
 class LinkedListNode {
