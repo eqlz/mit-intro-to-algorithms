@@ -46,6 +46,7 @@ class BinarySearchTree {
       // - whose left child is null
       
       // TO BE CONTINUED
+
     }
   }
 
@@ -71,6 +72,13 @@ class BinarySearchTree {
   minimum(node) {
     while(node.left !== null) {
       node = node.left;
+    }
+    return node;
+  }
+
+  maximum(node) {
+    while(node.right !== null) {
+      node = node.right;
     }
     return node;
   }
