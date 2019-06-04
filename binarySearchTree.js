@@ -67,6 +67,13 @@ class BinarySearchTree {
       newNode.parent = oldNode.parent;
     }
   }
+
+  minimum(node) {
+    while(node.left !== null) {
+      node = node.left;
+    }
+    return node;
+  }
 }
 
 
