@@ -45,8 +45,21 @@ class BinarySearchTree {
       // - in right sub-tree of nodeToDelete
       // - whose left child is null
       
-      // TO BE CONTINUED
+      let replacementNode = this.minimum(nodeToDelete.right);
+      if(replacementNode.parent !== nodeToDelete) {
+        // replacementNode's right child takes the position of replacementNode
+        this.transplant(replacementNode, replacementNode.right)
 
+        // nodeToDelete's right child becomes replacementNode's right child
+        replacementNode.right = nodeToDelete.right;
+
+        // then nodeToDelete's right child, now replacementNode's child right needs
+        // to update its parent from nodeToDelete to replacementNode
+        replacementNode.right.parent = replacementNode;
+      }
+      this.transplant(nodeToDelete, replacementNode);
+      replacementNode.left = nodeToDelete.left;
+      replacementNode.left.parent = replacementNode;
     }
   }
 
@@ -56,10 +69,10 @@ class BinarySearchTree {
     }
     // find oldNode's parent, decide if oldNode is a left or right child
     // from oldNode's parent perspective to replace oldNode with newNode
-    else if(oldNode === oldNode.parent.left) { 
+    else if(oldNode === oldNode.parent.left) { // oldNode is a left child of its parent
       oldNode.parent.left = newNode;
     }
-    else {
+    else { // oldNode is a right child of its parent
       oldNode.parent.right = newNode;
     }
 
