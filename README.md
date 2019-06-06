@@ -44,11 +44,13 @@ My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/
 ## Binary Search Tree
 ### BST deletion
 For the case where the node to be deleted has both left and right child, we need to find a replacement node first.
+
 This replacement node has these attributes:
 - in the right sub-tree of the node to be deleted
 - is the smallest node in the right sub-tree of the node to be deleted
 
 Why does the replacement node need to have these attributes?
+
 In order to maintain the BST structure:
 - the replacement node has to be bigger or equal to any node in left sub-tree of node to be deleted,
 - and smaller or equal to any node in right sub-tree of the node to be deleted.
