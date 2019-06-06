@@ -39,3 +39,18 @@ Break the problem into several smaller subproblems that are similar to original 
 
 ### Example of divide-and-conquer: merge sort
 My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the pseudocode in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithm works.
+
+
+## Binary Search Tree
+### BST deletion
+For the case where the node to be deleted has both left and right child, we need to find a replacement node first.
+This replacement node has these attributes:
+- in the right sub-tree of the node to be deleted
+- is the smallest node in the right sub-tree of the node to be deleted
+
+Why does the replacement node need to have these attributes?
+In order to maintain the BST structure:
+- the replacement node has to be bigger or equal to any node in left sub-tree of node to be deleted,
+- and smaller or equal to any node in right sub-tree of the node to be deleted.
+
+Any node in the right sub-tree of NTBD(node to be deleted) is bigger or equal to any node in left sub-tree of NTBD.  Now, we just need to find the smallest node in right sub-tree in NTBD. 

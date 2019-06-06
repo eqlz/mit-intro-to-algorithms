@@ -63,7 +63,7 @@ class BinarySearchTree {
     }
   }
 
-  transplant(oldNode, newNode) {
+  transplant(oldNode, newNode) { // newNode takes the position of oldNode
     if(oldNode.parent === null) { 
       this[root] = newNode;
     }
