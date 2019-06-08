@@ -6,63 +6,63 @@ class BinarySearchTree {
   }
 
   search(node, entryNode) {
-    if(node.data === entryNode.data || entryNode === null) {
+    if (node.data === entryNode.data || entryNode === null) {
       return entryNode;
-    }
-    else if(node.data < entryNode.data) {
+    } else if (node.data < entryNode.data) {
       this.search(node, entryNode.left);
-    }
-    else {
+    } else {
       this.search(node, entryNode.right);
     }
   }
 
   iterativeSearch(node, entryNode) {
-
+    while (node.data !== entryNode.data || entryNode !== null) {
+      if (node.data < entryNode.data) {
+        entryNode = entryNode.left;
+      } else {
+        entryNode = entryNode.right;
+      }
+    }
+    return entryNode;
   }
 
   insert(data) {
     let newNode = new BinarySearchTreeNode(data);
-    
-    if(this[root] === null) { // when binary search tree is empty
+
+    if (this[root] === null) { // when binary search tree is empty
       this[root] = newNode;
-    }
-    else {
+    } else {
       let parentNode = this[root];
 
-      while(parentNode !== null) { // find the node in correct left or right sub-tree to add newNode 
-        if(newNode.data < parentNode.data) {
+      while (parentNode !== null) { // find the node in correct left or right sub-tree to add newNode 
+        if (newNode.data < parentNode.data) {
           parentNode = parentNode.left;
-        } 
-        else {
+        } else {
           parentNode = parentNode.right;
         }
       }
 
       newNode.parent = parentNode;
-      if(newNode.data < parentNode.data) {
+      if (newNode.data < parentNode.data) {
         parentNode.left = newNode;
-      }
-      else {
+      } else {
         parentNode.right = newNode;
       }
     }
   }
 
   delete(nodeToDelete) {
-    if(nodeToDelete.left === null) { // left child is null or both left and right are null
+    if (nodeToDelete.left === null) { // left child is null or both left and right are null
       this.transplant(nodeToDelete, nodeToDelete.right);
-    }
-    else if(nodeToDelete.right === null) { // left child is not null, right child is null
+    } else if (nodeToDelete.right === null) { // left child is not null, right child is null
       this.transplant(nodeToDelete, nodeToDelete.left);
-    }
-    else { // neither left child nor right child is null
+    } else { // neither left child nor right child is null
       // find a node:
       // - in right sub-tree of nodeToDelete
       // - whose left child is null
-      
+
       let replacementNode = this.minimum(nodeToDelete.right);
-      if(replacementNode.parent !== nodeToDelete) {
+      if (replacementNode.parent !== nodeToDelete) {
         // replacementNode's right child takes the position of replacementNode
         this.transplant(replacementNode, replacementNode.right)
 
@@ -80,33 +80,32 @@ class BinarySearchTree {
   }
 
   transplant(oldNode, newNode) { // newNode takes the position of oldNode
-    if(oldNode.parent === null) { 
+    if (oldNode.parent === null) {
       this[root] = newNode;
     }
     // find oldNode's parent, decide if oldNode is a left or right child
     // from oldNode's parent perspective to replace oldNode with newNode
-    else if(oldNode === oldNode.parent.left) { // oldNode is a left child of its parent
+    else if (oldNode === oldNode.parent.left) { // oldNode is a left child of its parent
       oldNode.parent.left = newNode;
-    }
-    else { // oldNode is a right child of its parent
+    } else { // oldNode is a right child of its parent
       oldNode.parent.right = newNode;
     }
 
     // from newNode's perspective, to replace its parent with oldNode's parent
-    if(newNode !== null) {
+    if (newNode !== null) {
       newNode.parent = oldNode.parent;
     }
   }
 
   minimum(node) {
-    while(node.left !== null) {
+    while (node.left !== null) {
       node = node.left;
     }
     return node;
   }
 
   maximum(node) {
-    while(node.right !== null) {
+    while (node.right !== null) {
       node = node.right;
     }
     return node;
