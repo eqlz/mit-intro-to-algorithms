@@ -33,8 +33,12 @@ class BinarySearchTree {
     if(node.right !== null) {
       return this.minimum(node.right);
     }
+
+    // two conditions:
+    // - right sub-tree is empty
+    // - node has a successor, because there can be a case where node doesn't have a successor
     
-    
+
   }
 
   insert(data) {
