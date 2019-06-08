@@ -55,4 +55,7 @@ In order to maintain the BST structure:
 - the replacement node has to be bigger or equal to any node in left sub-tree of node to be deleted,
 - and smaller or equal to any node in right sub-tree of the node to be deleted.
 
-Any node in the right sub-tree of NTBD(node to be deleted) is bigger or equal to any node in left sub-tree of NTBD.  Now, we just need to find the smallest node in right sub-tree in NTBD. 
+Any node in the right sub-tree of NTBD(node to be deleted) is bigger or equal to any node in left sub-tree of NTBD.  Now, we just need to find the smallest node in right sub-tree in NTBD.
+
+### BST successor
+What is a succssor of a given node? It the node has 1) smallest key, 2) greater than the given node.

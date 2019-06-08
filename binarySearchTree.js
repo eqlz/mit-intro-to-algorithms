@@ -26,6 +26,17 @@ class BinarySearchTree {
     return entryNode;
   }
 
+  successor(node) {
+    // the smallest key that is greater than the given node,
+    // will be found in the right subtree of this given node
+    // use minimum() to find the smallest node
+    if(node.right !== null) {
+      return this.minimum(node.right);
+    }
+    
+    
+  }
+
   insert(data) {
     let newNode = new BinarySearchTreeNode(data);
 
