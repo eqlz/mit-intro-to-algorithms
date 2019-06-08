@@ -5,6 +5,21 @@ class BinarySearchTree {
     this[root] = null;
   }
 
+  search(node, entryNode) {
+    if(node.data === entryNode.data || entryNode === null) {
+      return entryNode;
+    }
+    else if(node.data < entryNode.data) {
+      this.search(node, entryNode.left);
+    }
+    else if(node.data >= entryNode.data) {
+      this.search(node, entryNode.right);
+    }
+    else {
+      return null;
+    }
+  }
+
   insert(data) {
     let newNode = new BinarySearchTreeNode(data);
     
