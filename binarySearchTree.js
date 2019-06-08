@@ -12,12 +12,13 @@ class BinarySearchTree {
     else if(node.data < entryNode.data) {
       this.search(node, entryNode.left);
     }
-    else if(node.data >= entryNode.data) {
+    else {
       this.search(node, entryNode.right);
     }
-    else {
-      return null;
-    }
+  }
+
+  iterativeSearch(node, entryNode) {
+
   }
 
   insert(data) {
