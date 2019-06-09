@@ -125,6 +125,16 @@ class BinarySearchTree {
     }
     return node;
   }
+
+  inOrderWalk(node) {
+    if(node.left) {
+      this.inOrderWalk(node.left);
+    }
+    console.log(node.data);
+    if(node.right) {
+      this.inOrderWalk(node.right);
+    }
+  }
 }
 
 
