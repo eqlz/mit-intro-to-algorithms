@@ -38,6 +38,17 @@ class BinarySearchTree {
     // - right sub-tree is empty
     // - node has a successor, because there can be a case where node doesn't have a successor
     
+    // successor is going to be:
+    // - ancestor of of input node
+    // - lowest ancestor of this input node
+    // - input node is in the left sub-tree of this ancestor
+    let ancestorNode = node.parent;
+    while(ancestorNode && ancestorNode.right === node) {
+      // go up one more layer
+      node = ancestorNode;
+      ancestorNode = ancestorNode.parent;
+    }
+    return ancestorNode;
 
   }
 
