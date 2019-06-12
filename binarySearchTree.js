@@ -52,6 +52,26 @@ class BinarySearchTree {
 
   }
 
+  predecessor(node) {
+    // predecessor of a given node
+    // greatest node that is smaller than the given node
+    if(node.left !== null) {
+      return this.maximum(node.left);
+    }
+
+    // when given node's left sub-tree is empty
+    // the given node's predecessor is such:
+    // - ancestor of the input node
+    // - the input is in the right sub-tree of this ancestor node
+    // - lowest ancestor of the input node
+    let ancestorNode = node.parent;
+    while(ancestorNode && ancestorNode.left === node) {
+      node = ancestorNode;
+      ancestorNode = ancestorNode.parent;
+    }
+    return ancestorNode;
+  }
+
   insert(data) {
     let newNode = new BinarySearchTreeNode(data);
 
