@@ -49,7 +49,6 @@ class BinarySearchTree {
       ancestorNode = ancestorNode.parent;
     }
     return ancestorNode;
-
   }
 
   predecessor(node) {
@@ -78,13 +77,16 @@ class BinarySearchTree {
     if (this[root] === null) { // when binary search tree is empty
       this[root] = newNode;
     } else {
-      let parentNode = this[root];
 
-      while (parentNode !== null) { // find the node in correct left or right sub-tree to add newNode 
-        if (newNode.data < parentNode.data) {
-          parentNode = parentNode.left;
+      let parentNode = null;
+      let nodeToTraverse = this[root];
+
+      while (nodeToTraverse !== null) { // find the node in correct left or right sub-tree to add newNode 
+        parentNode = nodeToTraverse;
+        if (newNode.data < nodeToTraverse.data) {
+          nodeToTraverse = nodeToTraverse.left;
         } else {
-          parentNode = parentNode.right;
+          nodeToTraverse = nodeToTraverse.right;
         }
       }
 
@@ -167,8 +169,6 @@ class BinarySearchTree {
     }
   }
 }
-
-
 class BinarySearchTreeNode {
   constructor(data) {
     this.data = data;
@@ -177,3 +177,9 @@ class BinarySearchTreeNode {
     this.right = null;
   }
 }
+
+let BST = new BinarySearchTree();
+BST.insert(15)
+BST.insert(6);
+console.log(BST);
+// BST.insert(18);
