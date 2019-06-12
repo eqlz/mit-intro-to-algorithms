@@ -181,5 +181,15 @@ class BinarySearchTreeNode {
 let BST = new BinarySearchTree();
 BST.insert(15)
 BST.insert(6);
-console.log(BST);
-// BST.insert(18);
+BST.insert(18);
+BST.insert(3);
+BST.insert(7);
+BST.insert(2);
+BST.insert(4);
+BST.insert(13);
+BST.insert(9);
+BST.insert(17);
+BST.insert(20);
+// console.log(BST);
+
+BST.inOrderWalk(BST[root])
