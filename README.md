@@ -41,7 +41,11 @@ Break the problem into several smaller subproblems that are similar to original 
 My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the pseudocode in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithm works.
 
 ## Insertion sort
+The gist if insertion sort:
+While going through each item in the array, starting from the second item,
+compare current item's value to the previous item's value.
 
+If previous item has larger value than current item, swap values.  If not, do nothing.
 
 ## Binary Search Tree
 ### BST deletion
