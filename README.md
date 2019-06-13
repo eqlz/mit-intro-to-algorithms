@@ -40,6 +40,8 @@ Break the problem into several smaller subproblems that are similar to original 
 ### Example of divide-and-conquer: merge sort
 My [implementation](https://github.com/eqlz/mit-intro-to-algorithms/blob/master/mergeSort.js) follows the pseudocode in the textbook. ```console.log()``` has been put into places that helps visually understand how the algorithm works.
 
+## Insertion sort
+
 
 ## Binary Search Tree
 ### BST deletion

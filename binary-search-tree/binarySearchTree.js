@@ -191,5 +191,8 @@ BST.insert(9);
 BST.insert(17);
 BST.insert(20);
 // console.log(BST);
+console.log('min: ', BST.minimum(BST[root]).data);
+console.log('max: ', BST.maximum(BST[root]).data);
 
-BST.inOrderWalk(BST[root])
+console.log('inorder walk:')
+BST.inOrderWalk(BST[root]);
