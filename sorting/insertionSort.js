@@ -11,12 +11,20 @@ const insertionSort = (arrayToSort) => {
         let leftPositionToKey = keyIndex - 1;
         while (leftPositionToKey > -1 && arrayToSort[leftPositionToKey] > key) {
             let valueOfLeftPositionToKey = arrayToSort[leftPositionToKey]
+            
+            // change the value of keyIndex:
+            // the value at keyIndex (leftPositionToKey + 1) becomes
+            // the value of leftPositionToKey
             arrayToSort[leftPositionToKey + 1] = valueOfLeftPositionToKey;
-            arrayToSort[leftPositionToKey] = key;
             console.log('arrayToSort after move value of leftPositionToKey to key: ', arrayToSort);
+
             leftPositionToKey = leftPositionToKey - 1;
             console.log('left position to the key: ', leftPositionToKey);
         }
+        // if go through while loop
+        // below will change the value of leftPositionToKey
+        // value of leftPositionToKey becomes
+        // value of keyIndex
         arrayToSort[leftPositionToKey + 1] = key;
         console.log('arrayToSort after each iteration: ', arrayToSort);
     }
